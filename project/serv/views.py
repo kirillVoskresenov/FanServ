@@ -96,7 +96,7 @@ class PostSearch(ListView):
 class CommentCreate(LoginRequiredMixin, CreateView):
     form_class = CommForm
     model = Comment
-    template_name = 'comment_edit.html'
+    template_name = 'comment_create.html'
     permission_required = ('serv.add_comment')
     success_url = reverse_lazy('startpage')
 

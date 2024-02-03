@@ -22,13 +22,22 @@ news
 
            <p class="date">Опубликовано: {{ post.article_date }} пользователем {{ post.author }}</p>
            <p class="date">Сообщение: {{ post.text }}</p>
-           <p class="date">Категория: <a href="{% url 'detail' post.id %}">{{ post.category }}</a></p>
+           <p class="date">Категория: {{ post.category }}</p>
+           <p class="date">Детализация поста: <a href="{% url 'detail' post.id %}">Тык</a></p>
            {% if post.file %}
                <p><img src="{{ post.file.url }}"></p>
+               <p>&nbsp;</p>
+               <p>___________________________________________________________________________________________________</p>
+               <p>&nbsp;</p>
+               <p>&nbsp;</p>
+
            {% endif %}
        </div>
             {% empty %}
        <h1 style="text-align: center;">Объявлений нет!</h1>
    {% endfor %}
+
+
+
 
 {% endblock content %}
